@@ -22,6 +22,11 @@ In this process, the model learns to undo the forwared diffusion process by lear
 
 The model start with pure noise and learn to transform it into a coherent image. Here, a neural network, such as UNet (or Transformer) learns to predict the noise added at each step in the forward process. It learns to predict what noise to remove at each step.
 
+<div align="center">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/241c1393-6146-4926-a11c-e8abd2ce047b" />
+<p><em>Fig: UNet Architecture</em></p>
+</div>
+
 Iteratively, the models learns to remove the predicted noise from the image at each time step, gradually refining the input into a fine output image.
 
 ## Training and Inference
