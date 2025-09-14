@@ -28,6 +28,7 @@ Iteratively, the models learns to remove the predicted noise from the image at e
 
 The PyTorch implementation creates a very small model, around 4.5M parameters model, trained to FashionMNIST dataset for 5 epochs only. It is only done for educational purpose, keeping the hardware requirements in-check while making sure the concepts are well defined.
 
+<div align="center">
 <table>
   <tr>
     <td align="center">
@@ -40,6 +41,7 @@ The PyTorch implementation creates a very small model, around 4.5M parameters mo
     </td>
   </tr>
 </table>
+</div>
 
 ## License
 
