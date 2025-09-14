@@ -24,6 +24,23 @@ The model start with pure noise and learn to transform it into a coherent image.
 
 Iteratively, the models learns to remove the predicted noise from the image at each time step, gradually refining the input into a fine output image.
 
+## Training and Inference
+
+The PyTorch implementation creates a very small model, around 4.5M parameters model, trained to FashionMNIST dataset for 5 epochs only. It is only done for educational purpose, keeping the hardware requirements in-check while making sure the concepts are well defined.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/2d2e8b67-0bd3-4d8f-9a36-de7ebe02b3e0" width="300" />
+      <p><em>Fig: Samples generated while training</em></p>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/79cb5a4b-0a80-4676-8a56-1f18110b9f0d" width="300" />
+      <p><em>Fig: Samples per timestep t</em></p>
+    </td>
+  </tr>
+</table>
+
 ## License
 
 See [LICENSE](LICENSE) file for details.
