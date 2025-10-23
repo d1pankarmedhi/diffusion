@@ -37,11 +37,11 @@ The PyTorch implementation creates a very small model, around 4.5M parameters mo
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/2d2e8b67-0bd3-4d8f-9a36-de7ebe02b3e0" width="300" />
-      <p><em>Fig: Samples generated while training</em></p>
+      <img src="https://github.com/user-attachments/assets/2d2e8b67-0bd3-4d8f-9a36-de7ebe02b3e0" width="500" />
+      <p><em>Fig: Sample Generations</em></p>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/79cb5a4b-0a80-4676-8a56-1f18110b9f0d" width="300" />
+      <img src="https://github.com/user-attachments/assets/79cb5a4b-0a80-4676-8a56-1f18110b9f0d" width="350" />
       <p><em>Fig: Samples per timestep t</em></p>
     </td>
   </tr>
