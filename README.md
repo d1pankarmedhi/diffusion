@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Diffusion Model</h1>
-  <p>A PyTorch implementation of a Diffusion Model for image generation.</p>
+  <p>A PyTorch implementation of an Unconditional Diffusion Model for image generation.</p>
 
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=flat&logo=PyTorch&logoColor=white) ![Python](https://img.shields.io/badge/Python-blue.svg?style=flat&logo=python&logoColor=white)
 
