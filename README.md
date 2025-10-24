@@ -14,24 +14,27 @@ The project implements a diffusion model that gradually converts random noise in
 
 This process involves adding random noise to the input image, progressively corrupting them in a step by step process. This processes is also referred to as Markov Chain, where the state at each step depends on the previous step.
 
-The noise addion continues till the input image becomes pure noise, represented by Gaussian distribution.
+The noise addition continues till the input image becomes pure noise, represented by Gaussian distribution.
+
+<img width="1182" height="184" alt="image" src="https://github.com/user-attachments/assets/41499028-e0fe-4ccb-ba32-a8f7495335c9" />
+
 
 ### Reverse Diffusion (Predicting & removing noise)
 
-In this process, the model learns to undo the forwared diffusion process by learning to remove the noise step by step, to recontruct the original data.
+In this process, the model learns to undo the forward diffusion process by learning to remove the noise step by step, to reconstruct the original data.
 
-The model start with pure noise and learn to transform it into a coherent image. Here, a neural network, such as UNet (or Transformer) learns to predict the noise added at each step in the forward process. It learns to predict what noise to remove at each step.
+The model starts with pure noise and learn to transform it into a coherent image. Here, a neural network, such as [UNet](https://arxiv.org/pdf/1505.04597) (Ronneberger et al. (2015)) (or Transformer) learns to predict the noise added at each step in the forward process. It learns to predict what noise to remove at each step.
 
 <div align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/241c1393-6146-4926-a11c-e8abd2ce047b" />
 <p><em>Fig: UNet Architecture</em></p>
 </div>
 
-Iteratively, the models learns to remove the predicted noise from the image at each time step, gradually refining the input into a fine output image.
+Iteratively, the model learns to remove the predicted noise from the image at each time step, gradually refining the input into a fine output image.
 
 ## Training and Inference
 
-The PyTorch implementation creates a very small model, around 4.5M parameters model, trained to FashionMNIST dataset for 5 epochs only. It is only done for educational purpose, keeping the hardware requirements in-check while making sure the concepts are well defined.
+The PyTorch implementation creates a very small model, trained on the FashionMNIST dataset for 5 epochs only. It is only done for educational purposes, keeping the hardware requirements in check while making sure the concepts are well defined.
 
 <div align="center">
 <table>
