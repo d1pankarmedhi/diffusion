@@ -6,15 +6,40 @@
 
 </div>
 
-## Overview
+## Diffusion Models
 
 The project implements a diffusion model that gradually converts random noise into meaningful images through an iterative denoising process. The complete diffusion process can be divided into two phases: **Forward and Reverse Diffusion**.
 
 ### Forward Diffusion (Adding Noise to image)
 
-This process involves adding random noise to the input image, progressively corrupting them in a step by step process. This processes is also referred to as Markov Chain, where the state at each step depends on the previous step.
+This process involves adding random noise to the input image $x_0$, progressively corrupting it in a step-by-step process, for $t = 1, ..., T$, arriving at $x_t$. This process is also referred to as a Markov Chain, where the state at each step depends on the previous step.
 
-The noise addition continues till the input image becomes pure noise, represented by Gaussian distribution.
+At each step $t$, we add a little bit of Gaussian noise. $\beta_t$ is a small value of noise added to the image, and 
+> $\alpha_t = 1 - \beta_t$
+
+We keep adding noise over time, defining a cumulative product
+
+> $\overline{\alpha_t}$ = $\sum_{s=1}^{t} \alpha_s$
+
+and over time, after $t$ steps, only a part of the image survives. 
+
+Thus, the direct formula for the noisy image can be expressed as:
+
+> $x_t = \sqrt{\overline{\alpha}} x_0 + \sqrt{1 - \overline{\alpha_t}}ϵ$
+
+where,
+
+  - $x_t$ = noisy image at step t
+  - $x_0$ = original image
+  - $ϵ \sim N(0, I)$ = random Gaussian noise
+
+In short,
+
+- $\sqrt{\overline{\alpha}}x_0$ = how much clean image survives
+- $\sqrt{1 - \overline{\alpha_t}}ϵ$ = how much noise is mixed in the image.
+
+Also, referred to as the forward diffusion equation.
+
 
 <img width="1182" height="184" alt="image" src="https://github.com/user-attachments/assets/41499028-e0fe-4ccb-ba32-a8f7495335c9" />
 
@@ -23,7 +48,9 @@ The noise addition continues till the input image becomes pure noise, represente
 
 In this process, the model learns to undo the forward diffusion process by learning to remove the noise step by step, to reconstruct the original data.
 
-The model starts with pure noise and learn to transform it into a coherent image. Here, a neural network, such as [UNet](https://arxiv.org/pdf/1505.04597) (Ronneberger et al. (2015)) (or Transformer) learns to predict the noise added at each step in the forward process. It learns to predict what noise to remove at each step.
+The model starts with pure noise $x_t$ (noisy image) and learns to transform it into a coherent image $x_0$. 
+
+Here, a neural network, such as [UNet](https://arxiv.org/pdf/1505.04597) (Ronneberger et al. (2015)) (or Transformer), learns to predict the noise added at each step in the forward process. It learns to predict what noise to remove at each step.
 
 <div align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/241c1393-6146-4926-a11c-e8abd2ce047b" />
@@ -31,6 +58,8 @@ The model starts with pure noise and learn to transform it into a coherent image
 </div>
 
 Iteratively, the model learns to remove the predicted noise from the image at each time step, gradually refining the input into a fine output image.
+
+
 
 ## Training and Inference
 
