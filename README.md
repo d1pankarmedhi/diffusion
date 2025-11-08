@@ -72,6 +72,17 @@ Iteratively, the model learns to remove the predicted noise from the image at ea
 <img src="https://github.com/user-attachments/assets/79cb5a4b-0a80-4676-8a56-1f18110b9f0d" width="350" />
 </div>
 
+## Metrics
+
+Trained for only *50* epochs, with timesteps *1000*, the model was able to achieve some comendable results, given that it is only a small, *7.41*M parameter model. 
+
+```
+FID: 47.81 
+IS: 4.06 ± 0.17 
+KID: 9.32 ± 0.80
+``` 
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/1260d550-badb-417a-9bff-d2780778f138" />
 
 ## License
 
