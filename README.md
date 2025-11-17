@@ -6,7 +6,13 @@
 
 </div>
 
-The project implements a diffusion model that gradually converts random noise into meaningful images through an iterative denoising process. The complete diffusion process can be divided into two phases: **Forward and Reverse Diffusion**.
+The project implements a diffusion model that gradually converts random noise into meaningful images through an iterative denoising process. 
+
+<div align="center">
+  <img width="900" alt="denoising" src="https://github.com/user-attachments/assets/6793593e-e3a7-4e28-8ee8-93d4e925c885" />
+</div>
+
+The complete diffusion process can be divided into two phases: **Forward and Reverse Diffusion**.
 
   <table>
     <tbody>
