@@ -80,14 +80,14 @@ Iteratively, the model learns to remove the predicted noise from the image at ea
 
 ## Metrics
 
-Trained for only *50* epochs, with timesteps *1000*, the model was able to achieve some good results, given that it is only a small, *7.41*M parameter model. 
+Trained for only 50 epochs, with timesteps 1000. 
 
 ```
-FID: 47.81 
-IS: 4.06 ± 0.17 
-KID: 0.009
+FID: 25.81 
+IS: 4.06  
+KID: 0.0009
 ``` 
-*Note: FID requires sample size of 10,000 - 50,000, which is not feasible given the resource constraints. The evaluation was performed with 1000 samples, where KID becomes a more prominent metric.*
+*Note: FID requires a sample size of 10,000 - 50,000, which is not feasible given the resource constraints. The evaluation was performed with 1000 samples, where KID becomes a more prominent metric.*
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/1260d550-badb-417a-9bff-d2780778f138" />
 
